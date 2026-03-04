@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    purpose: practice
+    project: awan
+spec:
+  replica: 2
+  selector:
+    matchLabels:
+      type: pod
+      sector: practice
+      project: awan
+  template:
+    metadata:
+      labels:
+        type: pod
+        sector: practice
+        project: awan
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          envFrom:
+          - ConfigMapRef:
+              name: pod1-config
+
+

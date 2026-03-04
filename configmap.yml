@@ -1,0 +1,9 @@
+apiversion: v1
+kind: ConfigMap
+metadata:
+  name: pod1-config
+data:
+  watch: titan
+  bike: avenger
+  mobile: pixel
+

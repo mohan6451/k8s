@@ -1,0 +1,20 @@
+apiversion: v1
+kind: pod
+metadata:
+  name: nginx
+  labels:
+    type: pod
+    sector: practice
+    project: awan
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      envFrom:
+        - ConfigMapRef:
+            name: pod1-config
+    - name: almalinux
+      image: almalinux:9
+      command: ["sleep", "10000"]
+
+      
