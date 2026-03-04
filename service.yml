@@ -8,6 +8,6 @@ spec:
     sector: practice
     project: awan
   ports:
-    - protocal: TCP
+    - protocol: TCP
       port: 80 # service port
       targetPort: 80 # container Port
