@@ -25,6 +25,7 @@ Hi this the doc of my experience in creating the EKS cluster from ec2 server usi
         4. Go to EC2 → Your Instance → Actions → Security → Modify IAM Role
         5. Attach the role → click Update IAM Role
         6. Verify on EC2:
+                
                 aws sts get-caller-identity
 5. Create EKS Cluster:
         We can create the EKS cluster from the official git eksctl repo files or your custom build files. I made a custom build basic file by going eks repo, adding the needed lines. you can check the cluster.yaml file.
@@ -32,7 +33,9 @@ Hi this the doc of my experience in creating the EKS cluster from ec2 server usi
         cmd to create the cluster: eksctl create cluster -f cluster.yaml(add your configured file name ) and it will take quite some time (~15–20 mins or long)
 6. Configure kubectl to Connect to EKS
         after cluster creation it usually updates kubeconfig automatically, but it's good practice to run it explicitly:
-                aws eks update-kubeconfig --region us-east-1 --name cluster-1
+            
+            aws eks update-kubeconfig --region us-east-1 --name cluster-1
+            
             then verify it by: kubectl get nodes
 
 
@@ -48,6 +51,7 @@ We can clearly see that  IAM Role clustersetup is missing EKS permissions. You n
 We can get the required policies by simply searching through search engine or official docs. 
 Also create the Inline Policy for missing EKS actions
 verify permissions by 
+        
         aws eks describe-cluster-versions --region us-east-1
 
 you can troubleshoot it by using below commands 
@@ -86,7 +90,6 @@ Command to cleanup failed cluster:
  and verify it by 
         
         aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --region us-east-1 | grep cluster1 
-
         or
 
 you can also delete and check by using CloudFormation console 
