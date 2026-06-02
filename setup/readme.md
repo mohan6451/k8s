@@ -86,6 +86,6 @@ Command to cleanup failed cluster:
  and verify it by 
          aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --region us-east-1 | grep cluster1 
 
-         or
+        or
 
 you can also delete and check by using CloudFormation console 
