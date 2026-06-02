@@ -5,9 +5,14 @@ metadata:
     name: cluster1
     region: us-east-1
 managedNodeGroups:
-  - name: cluster11
-    instanceTypes: ["m5.large","c4.large","c5.large"]
-    desiredCapacity: 2 #  by default this value is 3
+  - name: cluster1
+    instanceTypes: 
+      - m5.large
+      - m5a.large
+      - c4.large
+      - c5.large
+      - c5a.large
+    desiredCapacity: 3 #  by default this value is 3
     spot: true
     minSize: 1
     maxSize: 3
