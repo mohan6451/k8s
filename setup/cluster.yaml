@@ -13,6 +13,6 @@ managedNodeGroups:
       - c5.large
       - c5a.large
     desiredCapacity: 3 #  by default this value is 3
-    spot: true
+    #spot: true
     minSize: 1
     maxSize: 3
