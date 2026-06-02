@@ -26,7 +26,7 @@ Hi this the doc of my experience in creating the EKS cluster from ec2 server usi
         5. Attach the role → click Update IAM Role
         6. Verify on EC2:
                 aws sts get-caller-identity
-5. create EKS Cluster:
+5. Create EKS Cluster:
         We can create the EKS cluster from the official git eksctl repo files or your custom build files. I made a custom build basic file by going eks repo, adding the needed lines. you can check the cluster.yaml file.
 
         cmd to create the cluster: eksctl create cluster -f cluster.yaml(add your configured file name ) and it will take quite some time (~15–20 mins or long)
@@ -84,7 +84,8 @@ note: before creating the same cluster after any error better to delete the prev
 Command to cleanup failed cluster: 
                     eksctl delete cluster --region=us-east-1 --name=<cluster name>
  and verify it by 
-         aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --region us-east-1 | grep cluster1 
+        
+        aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --region us-east-1 | grep cluster1 
 
         or
 
