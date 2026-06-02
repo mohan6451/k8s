@@ -84,8 +84,8 @@ note: before creating the same cluster after any error better to delete the prev
 Command to cleanup failed cluster: 
                     eksctl delete cluster --region=us-east-1 --name=<cluster name>
  and verify it by 
-           aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --region us-east-1 | grep cluster1
+         aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --region us-east-1 | grep cluster1 
 
-         or 
+         or
 
 you can also delete and check by using CloudFormation console 
