@@ -46,8 +46,8 @@ helm version
 
 
 
-aws eks describe-nodegroup \
-  --cluster-name cluster1 \
-  --nodegroup-name cluster1 \
-  --region us-east-1 \
-  --query 'nodegroup.health'
+# aws eks describe-nodegroup \
+#   --cluster-name cluster1 \
+#   --nodegroup-name cluster1 \
+#   --region us-east-1 \
+#   --query 'nodegroup.health'
