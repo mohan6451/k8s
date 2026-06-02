@@ -7,7 +7,7 @@ metadata:
 managedNodeGroups:
   - name: cluster1
     instanceTypes: 
-      - t3.medium
+      - t3.small
       # - m5.large
       # - m5a.large
       # - c4.large
