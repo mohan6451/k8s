@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt update
+sudo apt upgrade -y
 
 #for installing eksctl
 curl -sLO "https://github.com"
